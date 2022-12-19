@@ -5,7 +5,7 @@ const Button = ({ bgColor, color, text, size, borderRadius, width }) => {
     <button
       type="button"
       style={{
-        backgroundColor: bgColor,
+        background: bgColor,
         color,
         borderRadius,
       }}

@@ -11,7 +11,7 @@ module.exports = {
         14: "14px",
       },
       backgroundColor: {
-        "main-bg": "#FAFBFB",
+        "main-bg": "linear-gradient(45deg, rgb(135, 122, 122), rgb(255, 92, 142))",
         "main-dark-bg": "#20232A",
         "secondary-dark-bg": "#33373E",
         "light-gray": "#F7F7F7",

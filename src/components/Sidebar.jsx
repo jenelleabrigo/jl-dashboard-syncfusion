@@ -30,7 +30,7 @@ const Sidebar = () => {
               <SiShopware />
               <span>Shoppy</span>
             </Link>
-            <button type="button" onClick={() => setActiveMenu((prev) => !prev)} className="text-xl rounded-full p-3 hover:bg-light-gray mt-4 block dark:text-white ">
+            <button type="button" onClick={() => setActiveMenu((prev) => !prev)} className="text-xl rounded-full p-3 hover:text-gray mt-4 block dark:text-white ">
               <MdOutlineCancel />
             </button>
           </div>
@@ -44,7 +44,7 @@ const Sidebar = () => {
                     key={link.name}
                     onClick={handleCloseSidebar}
                     style={({ isActive }) => ({
-                      backgroundColor: isActive ? currentColor : "",
+                      background: isActive ? currentColor : "",
                     })}
                     className={({ isActive }) => (isActive ? activeLink : normalLink)}
                   >

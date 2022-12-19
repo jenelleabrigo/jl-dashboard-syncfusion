@@ -11,16 +11,17 @@ class SparkLine extends React.PureComponent {
         width={width}
         lineWidth={1}
         valueType="Numeric"
-        fill={color}
-        border={{ color: currentColor, width: 2 }}
+        fill="rgb(0, 189, 174)"
+        markerSettings={{ visible: ["All"], size: 2.5, fill: currentColor }}
+        border={{ color: "#e5e7eb", width: 2 }}
         dataSource={data}
         xName="x"
         yName="yval"
         type={type}
         tooltipSettings={{
           visible: true,
-          format: "${x}: data ${yval}",
-          TrackLineSettings: {
+          format: "${x} : data ${yval}",
+          trackLineSettings: {
             visible: true,
           },
         }}

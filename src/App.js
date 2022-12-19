@@ -31,7 +31,7 @@ const App = () => {
             </TooltipComponent>
           </div>
           {activeMenu ? (
-            <div className="w-72 z-[100] fixed sidebar dark:bg-secondary-dark-bg bg-white">
+            <div className="w-72 z-[100] fixed sidebar dark:bg-secondary-dark-bg bg-[#ebeaea]">
               <Sidebar />
             </div>
           ) : (
@@ -40,7 +40,7 @@ const App = () => {
             </div>
           )}
           <div className={`dark:bg-main-dark-bg bg-main-bg min-h-screen w-full overflow-auto ${activeMenu ? "md:ml-72" : "flex-2"}`}>
-            <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full">
+            <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full" style={{ background: currentColor }}>
               <Navbar />
             </div>
 
@@ -75,7 +75,7 @@ const App = () => {
                 <Route path="/stacked" element={<Stacked />} />
               </Routes>
             </div>
-            <div className="md:static bg-main-bg dark:bg-main-dark-bg w-full">
+            <div className="md:static bg-main-bg dark:bg-main-dark-bg w-full" style={{ background: currentColor }}>
               <Footer />
             </div>
           </div>

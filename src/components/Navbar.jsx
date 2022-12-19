@@ -11,7 +11,7 @@ import { useStateContext } from "../contexts/ContextProvider";
 
 const NavButton = ({ title, customFunc, icon, color, dotColor }) => (
   <TooltipComponent content={title} position="BottomCenter">
-    <button type="button" onClick={customFunc} style={{ color }} className="relative text-xl rounded-full p-3 hover:bg-light-gray">
+    <button type="button" onClick={customFunc} style={{ color }} className="relative text-xl rounded-full p-3 dark:text-white">
       <span style={{ background: dotColor }} className="absolute inline-flex rounded-full h-2 w-2 right-2 top-2"></span>
       {icon}
     </button>
@@ -38,13 +38,13 @@ const Navbar = () => {
 
   return (
     <div className="flex justify-between p-2 md:mx-6 relative">
-      <NavButton title="Menu" customFunc={() => setActiveMenu((prev) => !prev)} color={currentColor} icon={<AiOutlineMenu />} />
+      <NavButton title="Menu" dotColor="transparent" customFunc={() => setActiveMenu((prev) => !prev)} color={currentColor} icon={<AiOutlineMenu />} />
       <div className="flex">
         <NavButton title="Cart" customFunc={() => handleClick("cart")} color={currentColor} icon={<FiShoppingCart />} />
         <NavButton title="Chat" dotColor={currentColor} customFunc={() => handleClick("chat")} color={currentColor} icon={<BsChatLeft />} />
         <NavButton title="Notifications" dotColor={currentColor} customFunc={() => handleClick("notification")} color={currentColor} icon={<RiNotification3Line />} />
         <TooltipComponent content="Profile" position="BottomCenter">
-          <div className="flex items-center gap-2 cursor-pointer p-1 hover:bg-light-gray rounded-lg" onClick={() => handleClick("userProfile")}>
+          <div className="flex items-center gap-2 cursor-pointer p-1 rounded-lg" onClick={() => handleClick("userProfile")}>
             <img src={avatar} alt="avatar" className="rounded-full w-8 h-8" />
             <p className="md:block hidden">
               <span className="text-gray-400 text-14">Hi,</span> {""}
