@@ -1,0 +1,51 @@
+import React from "react";
+import { MdOutlineCancel } from "react-icons/md";
+
+import { Button } from ".";
+import { userProfileData } from "../data/dummy";
+import { useStateContext } from "../contexts/ContextProvider";
+import avatar from "../data/jldevelops.svg";
+
+const UserProfile = () => {
+  const { setIsClicked, currentColor } = useStateContext();
+
+  return (
+    <div className="absolute md:h-auto h-screen overflow-auto z-10 md:top-16 top-0 md:right-1 right-0 md:w-96 w-72 bg-white dark:bg-[#42464D] p-8 rounded-lg shadow-xl">
+      <div className="flex justify-between items-center">
+        <p className="font-semibold text-lg dark:text-gray-200">User Profile</p>
+        <button
+          type="button"
+          onClick={() => setIsClicked((prev) => !prev)}
+          style={{ color: "rgb(153, 171, 180", borderRadius: "50%" }}
+          className="text-2xl md:p-3 p-1 hover:drop-shadow-xl hover:bg-light-gray"
+        >
+          <MdOutlineCancel />
+        </button>
+      </div>
+      <div className="md:flex gap-5 items-center md:mt-6 mt-3">
+        <img src={avatar} alt="user-profile" className="rounded-full md:h-24 md:w-24 h-20 w-20 m-auto" />
+        <div className="md:text-left text-center">
+          <p className="font-semibold text-xl dark:text-gray-200">JL Develops</p>
+          <p className="text-gray-500 text-sm dark:text-gray-400">Administrator</p>
+          <p className="text-gray-500 text-sm dark:text-gray-400 font-semibold">developsjl@gmail.com</p>
+        </div>
+      </div>
+      <div className="mt-4 mb-4 border-t-1 border-color">
+        {userProfileData.map((item, index) => (
+          <div key={index} className="flex gap-5 border-b-1 border-color p-4 hover:bg-light-gray cursor-pointer  dark:hover:bg-[#42464D]">
+            <button type="button" className=" text-xl rounded-lg p-3 hover:bg-light-gray" style={{ color: item.iconColor, backgroundColor: item.iconBg }}>
+              {item.icon}
+            </button>
+            <div>
+              <p className="font-semibold text-base dark:text-gray-200">{item.title}</p>
+              <p className="text-gray-500 text-sm dark:text-gray-400">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+      <Button color="white" bgColor={currentColor} text="Logout" borderRadius="10px" width="full" />
+    </div>
+  );
+};
+
+export default UserProfile;
