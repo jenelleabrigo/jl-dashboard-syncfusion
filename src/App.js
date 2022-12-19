@@ -20,7 +20,7 @@ const App = () => {
             <TooltipComponent content="Settings" position="Top">
               <button
                 type="button"
-                className="text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white"
+                className="text-3xl p-3 hover:drop-shadow-xl hover:bg-light-gray text-white bg-gradient-to-r from-[#877A7A] to-[#3E97F5] "
                 onClick={() => {
                   setThemeSettings(true);
                 }}
@@ -31,7 +31,7 @@ const App = () => {
             </TooltipComponent>
           </div>
           {activeMenu ? (
-            <div className="w-72 z-[100] fixed sidebar dark:bg-secondary-dark-bg bg-[#ebeaea]">
+            <div className="w-72 z-[100] fixed sidebar dark:bg-secondary-dark-bg bg-[#ebeaea]" style={{ boxShadow: "1px 0 15px rgb(0 0 0 / 50%)" }}>
               <Sidebar />
             </div>
           ) : (
@@ -40,7 +40,7 @@ const App = () => {
             </div>
           )}
           <div className={`dark:bg-main-dark-bg bg-main-bg min-h-screen w-full overflow-auto ${activeMenu ? "md:ml-72" : "flex-2"}`}>
-            <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full" style={{ background: currentColor }}>
+            <div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full bg-gradient-to-r from-[#877A7A] to-[#3E97F5]" style={{ background: currentColor }}>
               <Navbar />
             </div>
 
@@ -75,7 +75,7 @@ const App = () => {
                 <Route path="/stacked" element={<Stacked />} />
               </Routes>
             </div>
-            <div className="md:static bg-main-bg dark:bg-main-dark-bg w-full" style={{ background: currentColor }}>
+            <div className="md:static bg-main-bg dark:bg-main-dark-bg w-full bg-gradient-to-r from-[#877A7A] to-[#3E97F5]" style={{ background: currentColor }}>
               <Footer />
             </div>
           </div>

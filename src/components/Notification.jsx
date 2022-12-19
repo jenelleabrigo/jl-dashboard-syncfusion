@@ -9,7 +9,10 @@ const Notification = () => {
   const { currentColor, setIsClicked } = useStateContext();
 
   return (
-    <div className="absolute md:h-auto h-screen overflow-auto z-10 md:top-16 top-0 right-0 md:right-40 md:w-96 w-72 bg-white dark:bg-[#42464D] p-8 rounded-lg shadow-xl ">
+    <div
+      className="absolute md:h-auto h-screen overflow-auto z-10 md:top-16 top-0 right-0 md:right-40 md:w-96 w-72 bg-white dark:bg-[#42464D] p-8 rounded-lg shadow-xl "
+      style={{ boxShadow: "1px 1px 15px rgb(0 0 0 / 50%)" }}
+    >
       <div className="flex justify-between items-center">
         <p className="font-semibold text-lg dark:text-gray-200">Notifications</p>
         <button

@@ -7,8 +7,8 @@ const Footer = () => {
 
   return (
     <div className="text-center text-sm p-1">
-      <MdCopyright color={currentColor} className="inline-block mr-1" />
-      <span className="text-gray-400">jldevelops</span>
+      <MdCopyright className="inline-block mr-1 text-white" />
+      <span className="text-white">jldevelops</span>
     </div>
   );
 };
